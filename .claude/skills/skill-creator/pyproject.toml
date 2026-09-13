@@ -1,0 +1,36 @@
+[project]
+name = "skill-creator-evals"
+version = "0.1.0"
+requires-python = ">=3.10"
+# No mandatory runtime deps — provider packages are optional extras.
+dependencies = [
+    "pyyaml>=6.0.3",
+]
+
+[project.optional-dependencies]
+# Direct Anthropic API (requires ANTHROPIC_API_KEY)
+claude = [
+    "anthropic>=0.40.0",
+    "deepeval>=4.0.0",
+]
+# AWS Bedrock via IAM default credential chain (requires AWS_BEDROCK_REGION)
+bedrock = [
+    "aiobotocore>=2.15.0",
+    "botocore>=1.35.0",
+    "deepeval>=4.0.0",
+]
+# GitHub Models API via LiteLLM (requires GITHUB_TOKEN)
+copilot = [
+    "litellm>=1.84.0",
+    "deepeval>=4.0.0",
+]
+
+[tool.uv]
+# This project is a script runner, not an installable package.
+# Skipping the build step avoids hatchling failing on the missing package structure.
+package = false
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
