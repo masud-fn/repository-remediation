@@ -32,6 +32,8 @@ For testing findings, extend the existing framework and patterns. If no tests ex
 
 For CI findings, prefer canonical project scripts so local and CI behavior stay aligned. Validate installation, lint, typecheck, tests, and build when applicable. Do not broaden permissions, expose secrets, or alter deployment behavior unless the finding requires it.
 
+For detailed CI/CD readiness remediation, read [references/ci-cd-readiness.md](references/ci-cd-readiness.md). It defines the CI invariant, parity, security, release, validation, and reporting requirements for that mode.
+
 For agent-readiness findings, inspect repository guidance and correct stale paths, commands, contradictions, missing validation steps, sensitive-data boundaries, or completion criteria. Keep canonical details in one place and link to them rather than duplicating large sections.
 
 For production or security findings, assess runtime impact before changing behavior. Never commit or print secrets, weaken authentication, disable security checks/TLS verification, or broaden CI permissions. If a secret is needed, document its required name without inventing a value.

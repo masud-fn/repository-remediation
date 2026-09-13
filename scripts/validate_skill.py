@@ -8,6 +8,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "SKILL.md"
 UI = ROOT / "agents" / "openai.yaml"
+CI_CD_REFERENCE = ROOT / "references" / "ci-cd-readiness.md"
 
 
 def fail(message: str) -> None:
@@ -20,6 +21,8 @@ def main() -> None:
         fail("SKILL.md is missing")
     if not UI.is_file():
         fail("agents/openai.yaml is missing")
+    if not CI_CD_REFERENCE.is_file():
+        fail("references/ci-cd-readiness.md is missing")
 
     text = SKILL.read_text(encoding="utf-8")
     if not text.startswith("---\n"):
