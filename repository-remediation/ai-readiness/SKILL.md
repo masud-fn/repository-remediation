@@ -1,5 +1,5 @@
 ---
-name: ai-readiness
+name: code-remidate-ai-readiness
 description: Improve the repository's AI/agent readiness by fixing stale guidance, validating executable commands, and clarifying architecture, safety, and completion boundaries.
 metadata:
   short-description: "Improve AI/agent repository readiness"

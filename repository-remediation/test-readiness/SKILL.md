@@ -1,5 +1,5 @@
 ---
-name: test-readiness
+name: code-remidate-test-readiness
 description: Improve a repository's test readiness by establishing a canonical, meaningful, and executable testing contract that works for developers, CI, and coding agents.
 metadata:
   short-description: "Improve test readiness"

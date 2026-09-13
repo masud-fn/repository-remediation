@@ -1,5 +1,5 @@
 ---
-name: repository-remediation
+name: code-remidate
 description: Safely remediate an existing repository by validating findings, fixing root causes, and validating the smallest appropriate change with repository-native tooling.
 metadata:
   short-description: "Verify and fix repository issues"

@@ -1,5 +1,5 @@
 ---
-name: ci-cd-readiness
+name: code-remidate-ci-cd-readiness
 description: Verify and remediate CI/CD readiness issues while preserving the repository's architecture, conventions, and least-privilege security model.
 metadata:
   short-description: "Fix CI/CD readiness gaps"

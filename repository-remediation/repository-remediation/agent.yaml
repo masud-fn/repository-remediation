@@ -1,4 +1,4 @@
-name: repository-remediation
+name: code-remidate
 description: Safely remediate an existing repository by validating findings, fixing root causes, and validating the smallest appropriate change with repository-native tooling.
 metadata:
   short-description: "Verify and fix repository issues"
@@ -6,4 +6,4 @@ metadata:
 interface:
   display_name: "Repository Remediation"
   short_description: "Verify and fix repository findings with minimal-risk remediation"
-  default_prompt: "Use $repository-remediation to verify supplied findings, determine whether they are still valid, fix the root cause with the smallest safe change, and report the exact status with evidence."
+  default_prompt: "Use $code-remidate to verify supplied findings, determine whether they are still valid, fix the root cause with the smallest safe change, and report the exact status with evidence."

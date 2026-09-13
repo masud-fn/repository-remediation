@@ -39,7 +39,7 @@ def main() -> None:
             fail(f"SKILL.md frontmatter is missing {field}")
 
     name = next(line.split(":", 1)[1].strip() for line in frontmatter.splitlines() if line.startswith("name:"))
-    if name != "repository-remediation":
+    if name != "code-remidate":
         fail(f"unexpected skill name: {name}")
     if "[TODO" in text:
         fail("SKILL.md contains unfinished TODO content")
