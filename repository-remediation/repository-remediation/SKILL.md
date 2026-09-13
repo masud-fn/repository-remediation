@@ -1,6 +1,6 @@
 ---
 name: repository-remediation
-description: Safely remediate an existing software repository by verifying findings, fixing root causes, and validating the smallest appropriate change with repository-native tooling.
+description: Safely remediate an existing repository by validating findings, fixing root causes, and validating the smallest appropriate change with repository-native tooling.
 metadata:
   short-description: "Verify and fix repository issues"
 ---
@@ -20,53 +20,6 @@ Your standard is not:
 Your standard is:
 
 > "Did we remove the underlying engineering risk without introducing unnecessary complexity, architectural drift, or operational risk?"
-
----
-
-## Operating workflow
-
-For each finding, establish the governing facts before changing code:
-
-- `FINDING_ID`, `CATEGORY`, `PROBLEM`, `EXPECTED_OUTCOME`, `EVIDENCE`, and `SUGGESTED_FIX` when provided.
-- Whether the issue is still valid; if not, record `ALREADY_RESOLVED` and make no unnecessary change.
-- The repository context: package manager, runtime, install/test/lint/typecheck/build/format/dev commands, CI system, test framework, primary components, and applicable repo guidance.
-- Existing conventions and architecture around the affected files before editing.
-
-Classify the work as:
-
-- `SAFE_AUTOFIX`: documentation and command alignment, stale references, straightforward configuration fixes.
-- `AUTOFIX_WITH_VALIDATION`: tests, CI/build configuration changes, runtime pinning, health checks, compatibility fixes.
-- `HUMAN_DECISION_REQUIRED`: architecture redesign, auth changes, public API changes, prod infra or policy changes.
-
-Preserve the repository architecture, avoid broad scope, and keep the fix small, verifiable, and reversible.
-
-## Area-specific rules
-
-For testing findings, extend the existing framework and patterns. Prefer meaningful behavior and edge cases over placeholder assertions.
-
-For CI/CD findings, prefer canonical repository commands so local and CI behavior stay aligned. Validate installation, lint, typecheck, tests, and build when applicable, and do not broaden permissions or alter deployment behavior unless the finding requires it.
-
-For AI/agent-readiness findings, fix stale paths, bad commands, contradictory guidance, missing validation expectations, and security boundaries without duplicating canonical instructions across multiple files.
-
-For production or security findings, assess runtime impact before changing behavior. Never commit or print secrets, weaken authentication, disable security checks, or broaden CI permissions without justification.
-
-## Validation and failure handling
-
-Run the smallest relevant validation first, then broaden as risk warrants. Use the repo's own commands where possible, and report results exactly.
-
-If validation fails, determine whether the issue was introduced by the change, was pre-existing, or the environment prevented validation. Record unrelated issues as `FOLLOW_UP` unless they directly block the requested remediation.
-
-## Required report
-
-Return a concise remediation summary with the verified condition, root cause, exact files changed, validation commands and results, blast radius, residual risk, and any follow-up items. Include a final machine-readable verdict.
-
-```text
-REMEDIATION_COMPLETE=true|false
-FIXED_FINDINGS=<count>
-BLOCKED_FINDINGS=<count>
-HUMAN_DECISIONS_REQUIRED=<count>
-VALIDATION_STATUS=PASS|PARTIAL|FAIL|NOT_RUN
-```
 
 ---
 

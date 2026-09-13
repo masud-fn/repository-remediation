@@ -1,0 +1,9 @@
+name: test-readiness
+description: Improve a repository's test readiness by establishing a canonical, meaningful, and executable testing contract that works for developers, CI, and coding agents.
+metadata:
+  short-description: "Improve test readiness"
+
+interface:
+  display_name: "Test Readiness"
+  short_description: "Verify and improve a repository's testing contract"
+  default_prompt: "Use $test-readiness to verify the repository's test maturity, establish a canonical test contract, add meaningful validation where appropriate, and report the exact status with evidence."

@@ -1,0 +1,9 @@
+name: ci-cd-readiness
+description: Verify and remediate CI/CD readiness findings using the repository's existing architecture, canonical commands, and least-privilege workflow practices.
+metadata:
+  short-description: "Fix CI/CD readiness gaps"
+
+interface:
+  display_name: "CI/CD Readiness"
+  short_description: "Verify and fix repository CI/CD readiness issues"
+  default_prompt: "Use $ci-cd-readiness to verify supplied CI/CD findings, confirm the repository's canonical validation contract, implement the smallest safe fix, and report the exact status with evidence. Follow the detailed guidance in references/ci-cd-readiness.md."

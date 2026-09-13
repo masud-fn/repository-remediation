@@ -1,0 +1,9 @@
+name: ai-readiness
+description: Improve the repository's AI/agent readiness by fixing stale guidance, validating executable commands, and clarifying architecture, safety, and completion boundaries.
+metadata:
+  short-description: "Improve AI/agent repository readiness"
+
+interface:
+  display_name: "AI Readiness"
+  short_description: "Verify and fix AI/agent-readiness gaps in a repository"
+  default_prompt: "Use $ai-readiness to verify repository guidance, confirm canonical commands and architecture boundaries, fix stale or contradictory instructions, and report the exact readiness status with evidence."
